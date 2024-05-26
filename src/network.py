@@ -27,3 +27,14 @@ class Network:
     for connection in self.direct_connections["locations"]:
       location_1, location_2 = self.locations[connection[0]].name, self.locations[connection[1]].name
       print(f"{location_1} <-> {location_2}")
+
+  def print_directly_connected_locations_and_routers(self):
+    print("Directly-Connected Locations & Routers:")
+    for connection in self.direct_connections["locations"]:
+      location_1, location_2 = self.locations[connection[0]].name, self.locations[connection[1]].name
+      key = str(tuple(sorted([connection[0], connection[1]])))
+      connected_router_pairs = self.direct_connections["locations_and_routers"][key]
+      for router_pair in connected_router_pairs:
+        router_1, router_2 = self.routers[router_pair[0]].name, self.routers[router_pair[1]].name
+        print(f"Location Connection: {location_1} <-> {location_2}\nRouters: {router_1} <-> {router_2}\n")
+        
