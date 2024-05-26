@@ -1,5 +1,4 @@
 import unittest
-
 from src.network import Network
 from src.router import Router
 from src.location import Location

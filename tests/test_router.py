@@ -1,5 +1,4 @@
 import unittest
-
 from src.router import Router
 
 class TestRouter(unittest.TestCase):
