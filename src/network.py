@@ -21,3 +21,9 @@ class Network:
         if connected_location_key not in self.direct_connections["locations_and_routers"]:
           self.direct_connections["locations_and_routers"][connected_location_key] = set()
         self.direct_connections["locations_and_routers"][connected_location_key].add(routers_value)
+
+  def print_directly_connected_locations(self):
+    print("Directly-Connected Locations:")
+    for connection in self.direct_connections["locations"]:
+      location_1, location_2 = self.locations[connection[0]].name, self.locations[connection[1]].name
+      print(f"{location_1} <-> {location_2}")
